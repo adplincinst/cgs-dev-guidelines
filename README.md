@@ -1,7 +1,7 @@
 # cgs-dev-guidelines
 CGS Development Guidelines
 
-## Github Developer Workflow
+## CGS Developer Github Project Workflow
 
 ```mermaid
 sequenceDiagram
@@ -19,20 +19,20 @@ sequenceDiagram
   fghr->>lw: 
   lw-->>dev: 
   sm->>dev: Assign Story
-  dev->>lw: create story-id branch
-  loop Make changes
+  dev->>lw: Create story-id branch
+  loop Make branch changes
      dev->lw: git commit
-     dev->mon: status updates
+     dev->>mon: Add story updates
   end
   dev->>lw: git push
-  lw->>fghr: psh
+  lw->>fghr: 
   fghr-->>dev: 
-  dev->>fghr: Create Pull Request
+  dev->>fghr: Create Pull Request (PR)
   fghr->>ghr: 
-  ghr->>reviewer: send PR review notification
+  ghr->>reviewer: Send PR review notification
   opt Review Status
-    reviewer->>dev: Accept
-    reviewer->>dev: Reject
+    reviewer->>dev: Review/Accept
+    reviewer->>dev: Review/Reject
   end
 ```
 
